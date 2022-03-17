@@ -28,7 +28,7 @@ export type OrderItemProps = {
     product: {
         id: string;
         name: string;
-        desription: string;
+        description: string;
         price: string;
         banner: string;
     }
@@ -127,7 +127,6 @@ export default function Dashboard({ orders }: HomeProps) {
 export const getServerSideProps = canSSRAuth(async (ctx) => {
     const apiClient = setupAPIClient(ctx);
     const response = await apiClient.get('/orders')
-    console.log(response.data)
     return {
         props: { orders: response.data }
     }

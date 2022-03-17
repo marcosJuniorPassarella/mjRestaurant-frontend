@@ -71,7 +71,6 @@ export function AuthProvider({ children }: AuthProviderProps) {
             const response = await api.post('/session', {
                 email, password
             })
-            console.log(response.data)
             const { id, name, token } = response.data;
             setCookie(undefined, '@nextauth.token', token, {
                 maxAge: 60 * 60 * 24 * 30, // EXPIRAR EM 1 MêS

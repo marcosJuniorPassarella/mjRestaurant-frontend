@@ -47,10 +47,10 @@ export function ModalOrder({ isOpen, onRequestClose, order, handleFinishOrder }:
                 {order.map(item => (
                     <section key={item.id} className={styles.containerItem} >
                         <span>
-                            {item.amount} - <strong>{item.product.name}</strong>
+                            {item?.amount} - <strong>{item.product?.name}</strong>
                         </span>
                         <span className={styles.description}>
-                            {item.product.desription}
+                            {item.product?.description}
                         </span>
                     </section>
                 ))}
